@@ -355,8 +355,12 @@ public class CoverFlowView extends LinearLayout {
 			if (mIsSingleTap) {
 				mStartX = event.getX(0);
 
-				int lowest = mTouchedCovers.first();
-				int highest = mTouchedCovers.last();
+			        int lowest =0;
+				int highest=0;
+				if(!mTouchedCovers.isEmpty()){
+					lowest= mTouchedCovers.first();
+					highest = mTouchedCovers.last();
+				}
 
 				if (lowest <= mSelectedCoverView.getNumber()
 						&& highest >= mSelectedCoverView.getNumber()
